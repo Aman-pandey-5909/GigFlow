@@ -24,6 +24,8 @@ const userSchema = new mongoose.Schema({
         ref: "Bid",
         default: []
     }
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model("User", userSchema);
