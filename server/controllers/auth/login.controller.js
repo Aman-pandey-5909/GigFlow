@@ -13,6 +13,6 @@ exports.login = asyncHandler(async (req, res) => {
         return res.status(401).send({ message: "Invalid credentials" })
     }
     const token = jwt.sign({ userId: userExists._id }, process.env.JWT_SECRET, { expiresIn: '1d' })
-    res.cookie('session', token, { httpOnly: true })
+    res.cookie('session', token, { httpOnly: true, secure: true, sameSite: 'none' })
     return res.status(200).send({ message: "Login successful", user: { name: userExists.name, email: userExists.email, _id: userExists._id } }) 
 } )
