@@ -1,3 +1,4 @@
 Jan 11, 7,30 PM : Auth ✅
 Jan 12, 1.30 PM : Server ✅
 Jan 12, 11.00 PM : Frontend RBAC, GET POST SEARCH gigs, Login, Signup ✅
+Jan 13, 12.30 PM : MVP Complete ✅
