@@ -17,7 +17,7 @@ const HomePage = () => {
       const res = await api.get("/gigs");
       dispatch(setGig(res.data));
     } catch (error) {
-      setErrormsg(error.message);
+      setErrormsg(error.response.data.error || error.response.data.message || error.message || "Something went wrong");
     }
   };
   console.log(gigs);
