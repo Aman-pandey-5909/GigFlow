@@ -14,5 +14,5 @@ exports.login = asyncHandler(async (req, res) => {
     }
     const token = jwt.sign({ userId: userExists._id }, process.env.JWT_SECRET, { expiresIn: '1d' })
     res.cookie('session', token, { httpOnly: true })
-    return res.status(200).send({ message: "Login successful" }) 
+    return res.status(200).send({ message: "Login successful", user: { name: userExists.name, email: userExists.email, _id: userExists._id } }) 
 } )

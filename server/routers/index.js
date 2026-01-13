@@ -7,5 +7,6 @@ router.use(require('./gigs/getgigs.route'));
 router.use(require('./gigs/postgigs.route'));
 router.use(require('./bids/getbids.route'));
 router.use(require('./bids/postbids.route'));
+router.use(require('./me/me.route'));
 
 module.exports = router;

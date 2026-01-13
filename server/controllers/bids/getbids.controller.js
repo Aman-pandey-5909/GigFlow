@@ -8,9 +8,9 @@ exports.getbids = asyncHandler(async (req, res) => {
     if(!gig) {
         return res.status(404).send({ message: "Gig not found" })
     }
-    if (gig.ownerId !== req.userid) {
-        return res.status(401).send({ message: "Unauthorized" })
+    if (gig.ownerId.toString() !== req.userid) {
+        return res.status(401).send({ message: "Unauthorized yeah" })
     }
-    const bids = await Bid.find({ gigId: id })
+    const bids = await Bid.find({ gigId: id }).populate('ownerId')
     return res.status(200).send({ message: "Get bids successful", bids })
 } )

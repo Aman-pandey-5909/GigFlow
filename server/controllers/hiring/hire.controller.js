@@ -32,7 +32,7 @@ exports.hire = asyncHandler(async (req, res) => {
     await bid.save({ session });
 
     gig.status = "assigned";
-    gig.freelancerId = bid.userId;
+    gig.freelancerId = bid.ownerId;
     await gig.save({ session });
 
     await Bid.updateMany(
